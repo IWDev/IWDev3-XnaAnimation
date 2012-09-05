@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Keywords>
+        <Keyword>AnimContent</Keyword>
+      </Keywords>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>SnippetFile1</Title>
+      <Author>Gareth</Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>AnimContent</Shortcut>
+    </Header>
+    <Snippet>
+      <Code Language="csharp"><![CDATA[            // Load our animation texture
+            texGuy = Content.Load<Texture2D>("gb_walk");
+
+            // Calculate frame sizes using the texture dimensions
+            frameWidth = texGuy.Width / numFrames;
+            frameHeight = texGuy.Height / 2; // (Two rows in our sprite sheet)
+
+            // Set up the draw destination rectangle for our dude
+            // somewhere in the middle/bottom of the screen
+            destRect = new Rectangle(350, 350, frameWidth, frameHeight);]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

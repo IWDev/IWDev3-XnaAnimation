@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Keywords>
+        <Keyword>AnimUpdate</Keyword>
+      </Keywords>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>SnippetFile1</Title>
+      <Author>Gareth</Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>AnimUpdate</Shortcut>
+    </Header>
+    <Snippet>
+      <Code Language="csharp"><![CDATA[            // We're not walking yet!
+            walking = false;
+
+            // Walk left
+            if (GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X < -0.2f ||
+               Keyboard.GetState().IsKeyDown(Keys.Left))
+            {
+                walkingDirection = -1;
+                walking = true;
+            }
+
+            // Walk right
+            if (GamePad.GetState(PlayerIndex.One).ThumbSticks.Left.X > 0.2f ||
+               Keyboard.GetState().IsKeyDown(Keys.Right))
+            {
+                walkingDirection = 1;
+                walking = true;
+            }
+
+            // Do animation if we're walking
+            if (walking)
+            {
+                // Add the time elapsed since the last frame to our current frame time
+                currentFrameTime += gameTime.ElapsedGameTime.TotalMilliseconds;
+
+                // If the current frame time has reached our target frame time...
+                if (currentFrameTime >= targetFrameTime)
+                {
+                    // Reset current frame time to 0
+                    currentFrameTime = 0;
+
+                    // Increment current frame
+                    currentFrame++;
+
+                    // Loop the animation if we've reached the total frame count
+                    // Remember the frame counter is base 0, so frames 0-5 
+                    // make up our six frames of animation, 6 is one frame too many!
+                    if (currentFrame == numFrames)
+                        currentFrame = 0;
+                }
+            }
+            else // Not currently walking
+            {
+                // Reset current frame and counter, so we always start the
+                // animation from the first frame
+                currentFrame = 0;
+                currentFrameTime = 0;
+            }]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

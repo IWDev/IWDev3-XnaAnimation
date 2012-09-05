@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Keywords>
+        <Keyword>ParallaxDrawBG</Keyword>
+      </Keywords>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>SnippetFile1</Title>
+      <Author>Gareth</Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>ParallaxDrawBG</Shortcut>
+    </Header>
+    <Snippet>
+      <Code Language="csharp"><![CDATA[            // Background layers
+            spriteBatch.Draw(texParallax1,
+                             new Rectangle(0, 0, 800 - parallax1Pos, 600),
+                             new Rectangle(parallax1Pos, 0, 800 - parallax1Pos, 600),
+                             Color.White);
+            spriteBatch.Draw(texParallax1,
+                             new Rectangle(800 - parallax1Pos, 0, parallax1Pos, 600),
+                             new Rectangle(0, 0, parallax1Pos, 600),
+                             Color.White);
+            spriteBatch.Draw(texParallax2,
+                             new Rectangle(0, 0, 800 - parallax2Pos, 600),
+                             new Rectangle(parallax2Pos, 0, 800 - parallax2Pos, 600),
+                             Color.White);
+            spriteBatch.Draw(texParallax2,
+                             new Rectangle(800 - parallax2Pos, 0, parallax2Pos, 600),
+                             new Rectangle(0, 0, parallax2Pos, 600),
+                             Color.White);]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

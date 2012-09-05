@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Keywords>
+        <Keyword>AnimDraw</Keyword>
+      </Keywords>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>SnippetFile1</Title>
+      <Author>Gareth</Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>AnimDraw</Shortcut>
+    </Header>
+    <Snippet>
+      <Code Language="csharp"><![CDATA[            // Set up a source rectangle, according to our animation
+            Rectangle sourceRect;
+            if (!walking)
+                // The idle frame is on the second row of the sheet, so we use frameHeight
+                // as out rectangle's top position
+                sourceRect = new Rectangle(0, frameHeight, frameWidth, frameHeight);
+            else
+                // Animation is on the first row of the sheet, so we use 0 as the rectangle
+                // top position. We then multiply the frameWidth by our current frame number
+                // to find the left position
+                sourceRect = new Rectangle(currentFrame * frameWidth, 0, frameWidth, frameHeight);
+
+            // Begin drawing
+            spriteBatch.Begin();
+
+            // Draw our guy!
+            spriteBatch.Draw(texGuy, destRect, sourceRect, Color.White,
+                             0f, Vector2.Zero,
+                             walkingDirection==-1?SpriteEffects.FlipHorizontally:SpriteEffects.None,
+                             0);
+
+            // End drawing
+            spriteBatch.End();]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

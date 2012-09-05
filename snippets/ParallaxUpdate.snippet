@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Keywords>
+        <Keyword>ParallaxUpdate</Keyword>
+      </Keywords>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>SnippetFile1</Title>
+      <Author>Gareth</Author>
+      <Description>
+      </Description>
+      <HelpUrl>
+      </HelpUrl>
+      <Shortcut>ParallaxUpdate</Shortcut>
+    </Header>
+    <Snippet>
+      <Code Language="csharp"><![CDATA[                // Move the parallax!
+                parallax1Pos += walkingDirection;
+                if (parallax1Pos >= 800) parallax1Pos -= 800;
+                if (parallax1Pos < 0) parallax1Pos = 800;
+                parallax2Pos += walkingDirection*2;
+                if (parallax2Pos >= 800) parallax2Pos -= 800;
+                if (parallax2Pos < 0) parallax2Pos = 800;
+                parallax3Pos += walkingDirection*4;
+                if (parallax3Pos >= 800) parallax3Pos -= 800;
+                if (parallax3Pos < 0) parallax3Pos = 800;]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
